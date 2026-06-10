@@ -15,9 +15,9 @@ def fetch_articles():
             break
         for article in data["articles"]:
             articles.append({
-                "title": articles["title"],
-                "description": articles["description"],
-                "published_At": articles["publishedAt"]
+                "title": article["title"],
+                "description": article["description"],
+                "published_At": article["publishedAt"]
             })
         time.sleep(1)
     print(f"total articles collected : {len(articles)}")
