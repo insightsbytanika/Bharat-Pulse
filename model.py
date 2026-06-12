@@ -8,6 +8,16 @@ from sklearn.metrics import classification_report
  
 def load_data():
     df= pd.read_csv("data/clean_data.csv")
-    print(f"Total no or articles loaded {len(df)}")
+    print(f"Total no of articles loaded {len(df)}")
     return df
 
+def label_sentiment(df):
+    analyser=SentimentIntensityAnalyzer()
+    def get_label(text):
+        score=analyser.polarity_scores(text)["compound"]
+        if score>0.05:
+            return "Positive"
+        elif score<-0.05:
+            return "Negative"
+        else:
+            return "Neutra "
