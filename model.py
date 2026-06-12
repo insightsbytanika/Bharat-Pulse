@@ -6,5 +6,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
  
-def lable_sentiment(df):
-    
+def load_data():
+    df= pd.read_csv("data/clean_data.csv")
+    print(f"Total no or articles loaded {len(df)}")
+    return df
+
