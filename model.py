@@ -22,4 +22,4 @@ def label_sentiment(df):
         else:
             return "Neutral"
         df["sentiment"]=df["clean_text"].apply(get_label)
-        print()
+        print(df['sentiment'].value_counts())
