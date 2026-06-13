@@ -20,4 +20,5 @@ def label_sentiment(df):
         elif score<-0.05:
             return "Negative"
         else:
-            return "Neutra "
+            return "Neutral"
+        df["sentiment"]=df["sentiment"].apply(get_label)
