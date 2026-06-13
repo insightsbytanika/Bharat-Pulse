@@ -21,4 +21,5 @@ def label_sentiment(df):
             return "Negative"
         else:
             return "Neutral"
-        df["sentiment"]=df["sentiment"].apply(get_label)
+        df["sentiment"]=df["clean_text"].apply(get_label)
+        print()
