@@ -27,4 +27,5 @@ def label_sentiment(df):
 
 def train_model(df):
     X= df["clean_text"] 
-    Y=  
+    y= df["sentiment"]
+    X_train , X_test , y_train, y_test = train_test_split(X,y,test_size=0.2, random_state=42)
