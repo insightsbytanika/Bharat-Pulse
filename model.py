@@ -21,6 +21,10 @@ def label_sentiment(df):
             return "Negative"
         else:
             return "Neutral"
-        df["sentiment"]=df["clean_text"].apply(get_label)
-        print(df['sentiment'].value_counts())
-        return df
+    df["sentiment"]=df["clean_text"].apply(get_label)
+    print(df['sentiment'].value_counts())
+    return df
+
+def train_model(df):
+    X= df["clean_text"] 
+    Y=  
