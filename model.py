@@ -32,3 +32,5 @@ def train_model(df):
     vectorizer=TfidfVectorizer(max_features=5000)
     X_train_vec=vectorizer.fit_transform(X_train)
     X_test_vec=vectorizer.transform(X_test)
+
+model = logesticregression()
