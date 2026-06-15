@@ -34,3 +34,4 @@ def train_model(df):
     X_test_vec=vectorizer.transform(X_test)
 
 model = LogesticRegression()
+model.LogesticRegression(X_train_vec, y_train)
