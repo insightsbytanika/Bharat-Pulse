@@ -37,6 +37,7 @@ def train_model(df):
 
     y_predict=model.predict(X_test_vec)
     print(classification_report(y_test,y_predict))
+    model = LogisticRegression(class_weight='balanced')
     
 df=load_data()
 df=label_sentiment(df)
