@@ -8,21 +8,20 @@ def fetch_articles():
 
     for query in QUERY:
         print(f"fetching {query}")
-
-    for page in range(1, PAGES + 1):
-        print(f"fetching page {page} of {PAGES}")
-        url = f"https://newsapi.org/v2/everything?q={QUERY}&language={LANGUAGE}&pageSize={PAGE_SIZE}&page={page}&apiKey={API_KEY}"
-        response = requests.get(url)
-        data=response.json()
-        if data["status"]!= "ok":
-            print(f"Error in page {page}: {data['message']}")
-            break
-        for article in data["articles"]:
-            articles.append({
-                "title": article["title"],
-                "description": article["description"],
-                "published_At": article["publishedAt"]
-            })
+        for page in range(1, PAGES + 1):
+            print(f"fetching page {page} of {PAGES}")
+            url = f"https://newsapi.org/v2/everything?q={QUERY}&language={LANGUAGE}&pageSize={PAGE_SIZE}&page={page}&apiKey={API_KEY}"
+            response = requests.get(url)
+            data=response.json()
+            if data["status"]!= "ok":
+                print(f"Error in page {page}: {data['message']}")
+                break
+            for article in data["articles"]:
+                articles.append({
+                    "title": article["title"],
+                    "description": article["description"],
+                    "published_At": article["publishedAt"]
+                })
         time.sleep(1)
     print(f"total articles collected : {len(articles)}")
     return articles
