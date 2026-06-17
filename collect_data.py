@@ -5,6 +5,10 @@ from config import API_KEY , QUERY , PAGES ,PAGE_SIZE , LANGUAGE
 def fetch_articles():
     articles=[]
     print("starting data collection")
+
+    for query in QUERY:
+        print(f"fetching {QUERY}")
+
     for page in range(1, PAGES + 1):
         print(f"fetching page {page} of {PAGES}")
         url = f"https://newsapi.org/v2/everything?q={QUERY}&language={LANGUAGE}&pageSize={PAGE_SIZE}&page={page}&apiKey={API_KEY}"
