@@ -7,7 +7,7 @@ def fetch_articles():
     print("starting data collection")
 
     for query in QUERY:
-        print(f"fetching {QUERY}")
+        print(f"fetching {query}")
 
     for page in range(1, PAGES + 1):
         print(f"fetching page {page} of {PAGES}")
